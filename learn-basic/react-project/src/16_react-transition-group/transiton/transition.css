@@ -1,0 +1,95 @@
+.mycard-enter,.mycard-appear{
+  opacity: 0;
+  transform: scale3d(.6);
+}
+.mycard-enter-active,.mycard-appear-active{
+  opacity: 1;
+  transform: scale3d(1);
+  transition: all ease-in-out 1s;
+}
+
+.mycard-enter-done,.mycard-appear-done{
+  color: aqua;
+}
+
+.mycard-exit{
+  opacity: 1;
+  transform: scale3d(1);
+}
+.mycard-exit-active{
+  opacity: 0;
+  transform: scale3d(.6);
+  transition: all ease-in-out 1s;
+}
+
+
+.mycard-exit-done{
+  opacity: 0;
+}
+
+/* /////////// */
+
+.btns-enter,.btns-appear{
+  opacity: 0;
+  /* cale3d(.6) */
+  transform: translateX(100%);
+}
+.btns-enter-active,.btns-appear-active{
+  opacity: 1;
+  /* scale3d(1)  */
+  transform: translateX(0) ;
+  transition: all ease-in-out 1s;
+}
+
+.btns-enter-done,.btns-appear-done{
+  color: aqua;
+}
+
+.btns-exit{
+  opacity: 1;
+  /* scale3d(1)  */
+  transform:translateX(0) ;
+}
+.btns-exit-active{
+  opacity: 0;
+  /* scale3d(.6)  */
+  transform:translate(-100%) ;
+  transition: all ease-in-out 1s;
+}
+
+
+.btns-exit-done{
+  opacity: 0;
+}
+
+
+
+/* -------- */
+.item-enter,.item-appear{
+  opacity: 0;
+  transform: scale3d(.6);
+}
+.item-enter-active,.item-appear-active{
+  opacity: 1;
+  transform: scale3d(1);
+  transition: all ease-in-out 1s;
+}
+
+.item-enter-done,.item-appear-done{
+  color: aqua;
+}
+
+.item-exit{
+  opacity: 1;
+  transform: scale3d(1);
+}
+.item-exit-active{
+  opacity: 0;
+  transform: scale3d(.6);
+  transition: all ease-in-out 1s;
+}
+
+
+.item-exit-done{
+  opacity: 0;
+}

@@ -1,0 +1,45 @@
+<!--
+ * @Author: web_XL
+ * @Date: 2021-05-23 16:00:56
+ * @LastEditors: web_XL
+ * @LastEditTime: 2021-05-23 16:05:53
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <a href="#/home">home</a>
+  <a href="#/info">info</a>
+  <a href="https://www.baidu.com/">buidu</a>
+  <div id="router-view"></div>
+  <script>
+    let div = document.getElementById("router-view")
+    window.addEventListener("hashchange", (e) => {
+      console.log("hashchange", e, location.hash)
+      switch (location.hash) {
+        case "#/home":
+          div.innerHTML = "home"
+          break;
+        case "#/info":
+          div.innerHTML = "info"
+          break;
+
+        default:
+          div.innerHTML = ""
+          break;
+      }
+
+    })
+  </script>
+</body>
+
+
+</html>

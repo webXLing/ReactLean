@@ -1,0 +1,70 @@
+<!--
+ * @Author: web_XL
+ * @Date: 2021-05-17 22:02:43
+ * @LastEditors: web_XL
+ * @LastEditTime: 2021-05-17 22:13:48
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  // generator 生成器
+  function* foo(params) {
+    let a = yield 1
+    console.log("a---", a);//a--- undefined
+    yield 2
+    yield 3
+    yield 4
+  }
+
+
+  // 返回一个迭代器  iterator
+  let gn = foo()
+  console.log(gn.next());
+  console.log(gn.next());
+  console.log(gn.next());
+  console.log(gn.next());
+  console.log(gn.next());
+
+  // generator 配合promise 使用
+  function* bar() {
+    console.log("bar1");
+    const res = yield new Promise((resolve, reject) => {
+      console.log("bar2");
+
+      setTimeout(() => {
+        console.log("bar3");
+
+        resolve("XL")
+      }, 2000);
+    })
+
+    console.log("bar4", res);
+  }
+  let barFn = bar()
+  let res1 = barFn.next()
+  console.log("res1", res1);
+  res1.value.then(res => {
+    console.log("res2", res);
+    // barFn.next(res)
+    barFn.next()
+
+  })
+
+  //next() 里面可以跟值 给下一个 yield
+
+
+</script>
+
+</html>

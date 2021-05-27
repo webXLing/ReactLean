@@ -1,0 +1,46 @@
+<!--
+ * @Author: web_XL
+ * @Date: 2021-03-15 21:51:34
+ * @LastEditors: web_XL
+ * @LastEditTime: 2021-03-16 21:54:46
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    class Person {
+      constructor(name) {
+        this.name = name
+      }
+      run() {
+        console.log(this, this.name)
+      }
+    }
+    const p = new Person("xl")
+    p.run()
+    var fun = p.run
+    // fun();
+    let obj = {
+      a: fun,
+      name: "xl"
+    }
+    obj.a()
+
+    let a = [1, 32, 32, 32, 321]
+    let res = a.map((item) => {
+      return item + obj.name
+    }, obj)
+    console.log(res)
+  </script>
+</body>
+
+</html>

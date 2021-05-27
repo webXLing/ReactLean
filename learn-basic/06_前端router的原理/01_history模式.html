@@ -1,0 +1,59 @@
+<!--
+ * @Author: web_XL
+ * @Date: 2021-05-23 16:00:56
+ * @LastEditors: web_XL
+ * @LastEditTime: 2021-05-23 16:27:55
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <a href="/home">home</a>
+  <a href="/info">info</a>
+  <a href="https://www.baidu.com/">buidu</a>
+  <div id="router-view1" onclick="history.back()">back</div>
+
+  <div id="router-view"></div>
+  <script>
+    let div = document.getElementById("router-view")
+    let elAs = document.getElementsByTagName("a")
+    for (const element of elAs) { // 迭代器
+      let href = element.getAttribute("href")
+      element.addEventListener("click", (e) => {
+        e.preventDefault()
+        console.log("href", href);
+        history.pushState({}, "", href)
+        changeUrl()
+      })
+    }
+
+    window.addEventListener("popstate", changeUrl)
+
+    function changeUrl(params) {
+      console.log("changeUrl", location.pathname);
+      switch (location.pathname) {
+        case "/home":
+          div.innerHTML = "home"
+          break;
+        case "/info":
+          div.innerHTML = "info"
+          break;
+
+        default:
+          div.innerHTML = ""
+          break;
+      }
+    }
+  </script>
+</body>
+
+
+</html>

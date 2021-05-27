@@ -1,0 +1,18 @@
+.nav-box{
+  display: flex;
+  align-items: center;
+  background: red;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+.nav-left{
+  background-color: red;
+}
+.nav-center{
+  flex: 1;
+  background: greenyellow;
+}
+.nav-right{
+  background-color: blue;
+}

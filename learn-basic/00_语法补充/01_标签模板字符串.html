@@ -1,0 +1,50 @@
+<!--
+ * @Author: web_XL
+ * @Date: 2021-05-05 20:24:29
+ * @LastEditors: web_XL
+ * @LastEditTime: 2021-05-05 20:27:50
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const name = "xl"
+    const age = 23
+
+    function aaa(...params) {
+      console.log(params);
+    }
+    aaa(1, 23, 32)
+
+
+    // 标签模板字符串可以对一个函数进行调用
+
+    aaa`name is ${name},age is ${age}`
+    // Array(3)
+    //   0: (3) ["name is ", ",age is ", "", raw: Array(3)]
+    //   1: "xl"
+    //   2: 23
+    //   length: 3
+    //   __proto__: Array(0)
+    aaa`
+      font-size:23px;
+      padding-top:10px;
+    `
+    // Array(1)
+    // 0: ["↵      font-size:23px;↵      padding-top:10px;↵    ", raw: Array(1)]
+    // length: 1
+    // __proto__: Array(0)
+
+  </script>
+</body>
+
+</html>

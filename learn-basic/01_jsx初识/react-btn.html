@@ -1,0 +1,53 @@
+<!--
+ * @Author: web_XL
+ * @Date: 2021-03-13 16:37:33
+ * @LastEditors: web_XL
+ * @LastEditTime: 2021-03-15 22:02:55
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 注意: 部署时，将 "development.js" 替换为 "production.min.js"。-->
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="app">dom</div>
+
+  <script type="text/babel">
+    //类型为 text/babel 是为了识别jsx语法 
+
+    let msg = 0
+
+    function btnFn(params) {
+      console.log("btnFn")
+      msg++
+      render()
+    }
+
+    function render(params) {
+      ReactDOM.render(
+        <div>
+          <h2>{msg}</h2>
+          <button onClick={btnFn}>点击</button>
+        </div>
+        ,
+        document.getElementById("app")
+      )
+    }
+
+    render()
+
+
+  </script>
+</body>
+
+</html>
