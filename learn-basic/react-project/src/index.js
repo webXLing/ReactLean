@@ -2,11 +2,13 @@
  * @Author: web_XL
  * @Date: 2021-03-31 21:38:09
  * @LastEditors: web_XL
- * @LastEditTime: 2021-05-27 16:15:11
+ * @LastEditTime: 2021-05-29 11:11:06
  * @Description: 
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import { BrowserRouter } from 'react-router-dom'
 
 // import 'antd/dist/antd.css';
 import 'antd/dist/antd.less';
@@ -47,13 +49,17 @@ import './style.css'
 // import App from './14_antd/01_基本用法';
 // import App from './14_antd/02_组合使用';
 // import App from './15_axios/App';
-import App from './16_react-transition-group/App';
+// import App from './16_react-transition-group/App';
 // import App from './16_react-transition-group/App';
 // import App from './017_easy_redux/App';
-// import App from './018_react-router/App';
+import App from './018_react-router/App';
 
 
-// import App from './00_myHocks/App';
+// import App from './00_myHocks/01_useState';
+// import App from './00_myHocks/02_useEffect';
+// import App from './00_myHocks/03_ useContext';
+
+
 
 
 
@@ -82,7 +88,9 @@ import App from './16_react-transition-group/App';
 
 
 ReactDOM.render(
-  <App subName="xl" />,
+  <BrowserRouter>
+    <App subName="xl" />
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

@@ -2,7 +2,7 @@
  * @Author: web_XL
  * @Date: 2021-05-13 21:48:31
  * @LastEditors: web_XL
- * @LastEditTime: 2021-05-22 21:36:20
+ * @LastEditTime: 2021-05-27 16:46:38
  * @Description: 
  */
 import store from './store/index.js'
@@ -14,7 +14,7 @@ store.subscribe((e) => {
   console.log("subscribe", e, "--", store.getState().num);
 })
 
-// 每次dispatch 都打印
+// 每次dispatch 都打印  cai
 function patchLogging (store) {
   const next = store.dispatch
   function dispatchAndLogging (action) {
