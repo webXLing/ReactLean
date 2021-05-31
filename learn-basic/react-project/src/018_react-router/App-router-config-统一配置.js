@@ -2,7 +2,7 @@
  * @Author: web_XL
  * @Date: 2021-05-23 16:42:03
  * @LastEditors: web_XL
- * @LastEditTime: 2021-05-31 21:33:18
+ * @LastEditTime: 2021-05-31 22:26:23
  * @Description: 
  */
 import React, { PureComponent } from 'react'
@@ -13,10 +13,11 @@ import NoMatch from './pages/NoMatch'
 import Login from './pages/Login'
 import Detail from './pages/Detail'
 import Detail2 from './pages/Detail2'
-
-
+import { renderRoutes } from 'react-router-config'
+import myRoutes from '../router'
 import { Link, BrowserRouter, Route, NavLink, Switch, withRouter } from 'react-router-dom'
 import Detail3 from './pages/Detail3'
+console.log("myRoutes", myRoutes);
 
 
 class App extends PureComponent {
@@ -54,28 +55,24 @@ class App extends PureComponent {
 
 
         {/* exact 路径全匹配 */}
+        {/* 动态路由 */}
 
         {/* Switch 唯一匹配 排他 定义组件和路由的映射关系 */}
-        <Switch>
+        {/* <Switch>
           <Route exact path="/home" >
             <Home></Home>
           </Route>
           <Route exact path="/about" component={About}>
           </Route>
           <Route path="/login" component={Login}></Route>
-
-          {/* 动态路由 */}
           <Route path="/detail/:id" component={Detail}></Route>
           <Route path="/detail2" component={Detail2}></Route>
           <Route path="/detail3" component={Detail3}></Route>
-
-
-
           <Route path="/:userid" component={User}></Route>
-
-
           <Route component={NoMatch}></Route>
-        </Switch>
+        </Switch> */}
+
+        {renderRoutes(myRoutes)}
       </div>
     )
   }
