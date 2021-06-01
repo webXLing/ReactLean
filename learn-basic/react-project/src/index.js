@@ -2,7 +2,7 @@
  * @Author: web_XL
  * @Date: 2021-03-31 21:38:09
  * @LastEditors: web_XL
- * @LastEditTime: 2021-05-31 22:12:54
+ * @LastEditTime: 2021-06-01 22:19:39
  * @Description: 
  */
 import React from 'react';
@@ -53,7 +53,12 @@ import './style.css'
 // import App from './16_react-transition-group/App';
 // import App from './017_easy_redux/App';
 // import App from './018_react-router/App';
-import App from './018_react-router/App-router-config-统一配置';
+// import App from './018_react-router/App-router-config-统一配置';
+// import App from './019_hooks体验/01_counter-class'
+// import App from './019_hooks体验/02_counter-hooks'
+import App from './019_hooks体验/03_useState复杂修改'
+
+
 
 
 
@@ -61,39 +66,16 @@ import App from './018_react-router/App-router-config-统一配置';
 // import App from './00_myHocks/02_useEffect';
 // import App from './00_myHocks/03_ useContext';
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ReactDOM.render(
   <BrowserRouter>
     <App subName="xl" />
   </BrowserRouter>,
   document.getElementById('root')
 );
+
+// ReactDOM.render(
+//   <App subName="xl" />,
+//   document.getElementById('root')
+// );
 
 
