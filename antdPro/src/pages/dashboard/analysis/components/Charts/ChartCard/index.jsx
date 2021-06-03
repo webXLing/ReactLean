@@ -4,7 +4,6 @@ import classNames from 'classnames';
 import styles from './index.less';
 
 const renderTotal = total => {
-  console.log("renderTotal", total)
   if (!total && total !== 0) {
     return null;
   }
@@ -74,7 +73,7 @@ class ChartCard extends React.Component {
     );
   };
 
-  render () {
+  render() {
     const {
       loading = false,
       contentHeight,
@@ -90,7 +89,7 @@ class ChartCard extends React.Component {
       <Card
         loading={loading}
         bodyStyle={{
-          padding: '20px 24px 8px 24px'
+          padding: '20px 24px 8px 24px',
         }}
         {...rest}
       >

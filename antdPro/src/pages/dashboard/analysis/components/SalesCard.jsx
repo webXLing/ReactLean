@@ -1,7 +1,7 @@
 import { Card, Col, DatePicker, Row, Tabs } from 'antd';
 import { FormattedMessage, formatMessage } from 'umi';
 import React from 'react';
-import numeral from 'numeral'; // js 精度和数字的处理
+import numeral from 'numeral';
 import { Bar } from './Charts';
 import styles from '../style.less';
 

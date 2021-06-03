@@ -1,24 +1,12 @@
-import { Axis, Chart, Geom, Tooltip, Interval } from 'bizcharts';
+import { Axis, Chart, Geom, Tooltip } from 'bizcharts';
 import React, { Component } from 'react';
 import Debounce from 'lodash.debounce';
 import autoHeight from '../autoHeight';
 import styles from '../index.less';
 
-
-
 class Bar extends Component {
   state = {
     autoHideXLabels: false,
-    data2: [
-      { year: '1951 年', tNum: 38 },
-      { year: '1952 年', tNum: 52 },
-      { year: '1956 年', tNum: 61 },
-      { year: '1957 年', tNum: 45 },
-      { year: '1958 年', tNum: 48 },
-      { year: '1959 年', tNum: 38 },
-      { year: '1960 年', tNum: 38 },
-      { year: '1962 年', tNum: 38 },
-    ]
   };
 
   root = undefined;
@@ -53,13 +41,13 @@ class Bar extends Component {
     }
   }, 500);
 
-  componentDidMount () {
+  componentDidMount() {
     window.addEventListener('resize', this.resize, {
       passive: true,
     });
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     window.removeEventListener('resize', this.resize);
   }
 
@@ -71,7 +59,7 @@ class Bar extends Component {
     this.node = n;
   };
 
-  render () {
+  render() {
     const {
       height = 1,
       title,
@@ -80,9 +68,7 @@ class Bar extends Component {
       color = 'rgba(24, 144, 255, 0.85)',
       padding,
     } = this.props;
-    const { autoHideXLabels, data2 } = this.state;
-    console.log(data2, "data2--------")
-
+    const { autoHideXLabels } = this.state;
     const scale = {
       x: {
         type: 'cat',
@@ -106,9 +92,6 @@ class Bar extends Component {
         }}
         ref={this.handleRoot}
       >
-        <div>
-          <div>data2</div>
-        </div>
         <div ref={this.handleRef}>
           {title && (
             <h4
@@ -119,9 +102,6 @@ class Bar extends Component {
               {title}
             </h4>
           )}
-
-
-          {/* ------ */}
           <Chart
             scale={scale}
             height={title ? height - 41 : height}
@@ -129,31 +109,12 @@ class Bar extends Component {
             data={data}
             padding={padding || 'auto'}
           >
-
             <Axis
               name="x"
               title={false}
-              label={
-                {
-                  rotate: Math.PI / 4
-                }
-              }
-              tickLine={
-                {
-                  lineWidth: 1, // 刻度线宽
-                  stroke: '#96b429', // 刻度线的颜色
-                }
-              }
-              line={
-                {
-                  stroke: '#d32f2f',
-                  fill: '#12248b',
-                  lineDash: [2, 2, 3],
-                  lineWidth: 3
-                }
-              }
+              label={autoHideXLabels ? undefined : {}}
+              tickLine={autoHideXLabels ? undefined : {}}
             />
-
             <Axis name="y" min={0} />
             <Tooltip showTitle={false} crosshairs={false} />
             <Geom type="interval" position="x*y" color={color} tooltip={tooltip} />

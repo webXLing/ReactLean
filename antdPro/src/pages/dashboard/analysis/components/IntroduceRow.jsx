@@ -201,7 +201,7 @@ const IntroduceRow = ({ loading, visitData }) => (
         }
         contentHeight={46}
       >
-        <MiniProgress percent={30} strokeWidth={8} targetLabel={"测试阿斯达"} target={40} color="#13C2C2" />
+        <MiniProgress percent={78} strokeWidth={8} target={80} color="#13C2C2" />
       </ChartCard>
     </Col>
   </Row>

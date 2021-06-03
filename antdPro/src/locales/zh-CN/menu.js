@@ -1,10 +1,3 @@
-/*
- * @Author: web_XL
- * @Date: 2021-05-21 11:58:41
- * @LastEditors: web_XL
- * @LastEditTime: 2021-05-21 13:55:19
- * @Description: 
- */
 export default {
   'menu.welcome': '欢迎',
   'menu.more-blocks': '更多区块',

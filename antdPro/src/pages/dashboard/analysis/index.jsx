@@ -12,10 +12,6 @@ import ProportionSales from './components/ProportionSales';
 import OfflineData from './components/OfflineData';
 
 class Analysis extends Component {
-  constructor(props) {
-    super(props)
-    console.log("Analysis.rangePickerValue------", this.state.rangePickerValue)
-  }
   state = {
     salesType: 'all',
     currentTabKey: '',
@@ -26,7 +22,7 @@ class Analysis extends Component {
 
   timeoutId = 0;
 
-  componentDidMount () {
+  componentDidMount() {
     const { dispatch } = this.props;
     this.reqRef = requestAnimationFrame(() => {
       dispatch({
@@ -35,7 +31,7 @@ class Analysis extends Component {
     });
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     const { dispatch } = this.props;
     dispatch({
       type: 'dashboardAndanalysis/clear',
@@ -97,14 +93,13 @@ class Analysis extends Component {
       rangePickerValue[0].isSame(value[0], 'day') &&
       rangePickerValue[1].isSame(value[1], 'day')
     ) {
-      console.log("styles.currentDate", styles.currentDate);
       return styles.currentDate;
     }
 
     return '';
   };
 
-  render () {
+  render() {
     const { rangePickerValue, salesType, currentTabKey } = this.state;
     const { dashboardAndanalysis, loading } = this.props;
     const {
@@ -142,9 +137,8 @@ class Analysis extends Component {
     const activeKey = currentTabKey || (offlineData[0] && offlineData[0].name);
     return (
       <GridContent>
-        <div>asdasd</div>
         <React.Fragment>
-          {/* <IntroduceRow loading={loading} visitData={visitData} /> */}
+          <IntroduceRow loading={loading} visitData={visitData} />
           <SalesCard
             rangePickerValue={rangePickerValue}
             salesData={salesData}
