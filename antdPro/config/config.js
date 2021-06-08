@@ -316,6 +316,23 @@ export default defineConfig({
               ],
             },
             {
+              path: '/myPage',
+              icon: 'form',
+              name: 'myPage',
+              routes: [
+                {
+                  path: '/',
+                  redirect: '/myPage/first',
+                },
+                {
+                  name: 'first',
+                  icon: 'smile',
+                  path: '/myPage/first',
+                  component: './myPage/first',
+                },
+              ]
+            },
+            {
               component: '404',
             },
           ],

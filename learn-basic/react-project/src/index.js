@@ -2,7 +2,7 @@
  * @Author: web_XL
  * @Date: 2021-03-31 21:38:09
  * @LastEditors: web_XL
- * @LastEditTime: 2021-06-02 22:21:04
+ * @LastEditTime: 2021-06-07 15:43:40
  * @Description: 
  */
 import React from 'react';
@@ -59,7 +59,14 @@ import './style.css'
 // import App from './019_hooks体验/03_useState复杂修改'
 // import App from './019_hooks体验/04_useEffect'
 // import App from './019_hooks体验/05_useContext'
-import App from './019_hooks体验/06_ussReducer'
+// import App from './019_hooks体验/06_ussReducer'
+// import App from './019_hooks体验/07_ussCallBack不能进行的性能优化'
+// import App from './019_hooks体验/08_ussCallBack进行的性能优化'
+// import App from './019_hooks体验/09_useMemo复杂计算的应用'
+import App from './019_hooks体验/10_useMemo传子组件应用类型'
+
+
+
 
 
 
