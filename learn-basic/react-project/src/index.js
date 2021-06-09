@@ -2,10 +2,10 @@
  * @Author: web_XL
  * @Date: 2021-03-31 21:38:09
  * @LastEditors: web_XL
- * @LastEditTime: 2021-06-07 15:43:40
+ * @LastEditTime: 2021-06-08 14:37:12
  * @Description: 
  */
-import React from 'react';
+import React, { createContext } from 'react';
 import ReactDOM from 'react-dom';
 
 import { BrowserRouter } from 'react-router-dom'
@@ -16,6 +16,9 @@ import 'antd/dist/antd.less';
 import zhCN from 'antd/lib/locale/zh_CN';
 // import moment from 'moment';
 import 'moment/locale/zh-cn';
+
+
+
 
 
 import './style.css'
@@ -63,7 +66,16 @@ import './style.css'
 // import App from './019_hooks体验/07_ussCallBack不能进行的性能优化'
 // import App from './019_hooks体验/08_ussCallBack进行的性能优化'
 // import App from './019_hooks体验/09_useMemo复杂计算的应用'
-import App from './019_hooks体验/10_useMemo传子组件应用类型'
+// import App from './019_hooks体验/10_useMemo传子组件应用类型'
+// import App from './019_hooks体验/11_useRef的使用'
+// import App from './019_hooks体验/12_useRef应用其他数据'
+// import App from './019_hooks体验/13_forwordRef回顾'
+// import App from './019_hooks体验/14_useImperativeHandle'
+// import App from './019_hooks体验/15_useEffect修改count'
+// import App from './019_hooks体验/16_useLayoutEffect'
+// import App from './019_hooks体验/17_自定义hook'
+// import App from './019_hooks体验/18_自定义hook-共享context'
+import App from './019_hooks体验/19_自定义hook-获取页面滚动'
 
 
 
@@ -71,6 +83,8 @@ import App from './019_hooks体验/10_useMemo传子组件应用类型'
 
 
 
+export const UserContext = createContext()
+export const TokenContext = createContext()
 
 
 
@@ -91,7 +105,11 @@ import App from './019_hooks体验/10_useMemo传子组件应用类型'
 
 ReactDOM.render(
   <BrowserRouter>
-    <App subName="xl" />
+    <UserContext.Provider value={{ name: "xl", age: 23 }}>
+      <TokenContext.Provider value="dasdaj-adasdas-2">
+        <App subName="xl" />
+      </TokenContext.Provider>
+    </UserContext.Provider>
   </BrowserRouter>,
   document.getElementById('root')
 );
@@ -100,5 +118,6 @@ ReactDOM.render(
 //   <App subName="xl" />,
 //   document.getElementById('root')
 // );
+
 
 

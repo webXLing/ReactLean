@@ -2,7 +2,7 @@
  * @Author: web_XL
  * @Date: 2021-06-02 22:16:58
  * @LastEditors: web_XL
- * @LastEditTime: 2021-06-03 17:24:53
+ * @LastEditTime: 2021-06-08 15:54:42
  * @Description: 
  */
 import React, { useReducer, useState } from 'react'
@@ -29,7 +29,6 @@ function Counter2 () {
 /**
  * useReducer
  * 是useState的替代品  
- * 
  */
 export default function App () {
   const [state, dispatch] = useReducer(reducer, { num: 10 })
