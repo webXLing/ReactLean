@@ -1,0 +1,55 @@
+<!--
+ * @Author: web_XL
+ * @Date: 2021-06-14 16:53:56
+ * @LastEditors: web_XL
+ * @LastEditTime: 2021-06-14 17:01:52
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/immutable/3.8.2/immutable.min.js"
+  integrity="sha512-myCdDiGJRYrvRb/VuJ67ljifYTJdc1jdEvL4c4ftX9o3N6EAnmD83c/7l2/91RCINZ7c8w21tiXDT7RDFjdc3g=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<body>
+  <!-- immutable  -->
+
+  <!-- 数据的不可变性  永科用asign 和...会有性能和消耗内存 -->
+  <!-- 所以出现了immutable.js 解决这个问题 -->
+</body>
+<script>
+  const im = Immutable
+  let foo = {
+    a: 1, b: 2, c: 3,
+    firends: {
+      name: "XL",
+      age: 23
+    }
+  }
+
+  var map1 = im.Map(foo);
+  var map2 = map1.set('b', 50);
+  console.log(map1.get('b')); // 2
+  console.log(map2.get('b')); // 50
+
+  // im.Map 将第一层变为im对象 不会影响第二层 浅层
+  // im.FromJS 会将这个会变im对象  深层
+
+
+
+  let arr = [1, 32, 23, 232]
+  let imarr = im.List(arr)
+  imarr.set(0, "XL")
+  imarr.get(0)
+
+
+</script>
+
+</html>

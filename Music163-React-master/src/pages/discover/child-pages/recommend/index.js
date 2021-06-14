@@ -1,3 +1,10 @@
+/*
+ * @Author: web_XL
+ * @Date: 2021-05-30 09:26:52
+ * @LastEditors: web_XL
+ * @LastEditTime: 2021-06-14 15:49:17
+ * @Description: 
+ */
 import React, { memo } from 'react'
 
 import {
@@ -14,33 +21,33 @@ import HotArtist from './c-cpns/hot-artist'
 import UserLogin from './c-cpns/user-login'
 import SettleSinger from './c-cpns/settle-singer'
 
-function JMRecommend(props) {
-  
+function JMRecommend (props) {
+
   return (
     <RecommendWrapper>
       {/* 轮播图 */}
       <TopBanners />
       {/* 主体内容 */}
-        <Content className="w980">
-          {/* 主体推荐页左侧 */}
-          <RecommendLeft>
-            {/* 热门推荐 */}
-            <HotRecommend history={props.history} />
-            {/* 新碟上架 */}
-            <NewAlbum />
-            {/* 榜单 */}
-            <RecommendRanking to={props.history} />
-          </RecommendLeft>
-          {/* 主体推荐页右侧 */}
-          <RecommendRight>
-            {/* 登录 */}
-            <UserLogin />
-            {/* 入驻歌手 */}
-            <SettleSinger />
-            {/* 热门主播 */}
-            <HotArtist />
-          </RecommendRight>
-        </Content>
+      <Content className="w980">
+        {/* 主体推荐页左侧 */}
+        <RecommendLeft>
+          {/* 热门推荐 */}
+          <HotRecommend history={props.history} />
+          {/* 新碟上架 */}
+          <NewAlbum />
+          {/* 榜单 */}
+          <RecommendRanking to={props.history} />
+        </RecommendLeft>
+        {/* 主体推荐页右侧 */}
+        <RecommendRight>
+          {/* 登录 */}
+          <UserLogin />
+          {/* 入驻歌手 */}
+          <SettleSinger />
+          {/* 热门主播 */}
+          <HotArtist />
+        </RecommendRight>
+      </Content>
     </RecommendWrapper>
   )
 }
