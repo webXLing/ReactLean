@@ -1,45 +1,39 @@
 /*
  * @Author: web_XL
- * @Date: 2021-05-30 09:26:52
+ * @Date: 2021-06-20 14:12:51
  * @LastEditors: web_XL
- * @LastEditTime: 2021-06-21 09:51:21
- * @Description: 
+ * @LastEditTime: 2021-06-21 09:50:45
+ * @Description:
  */
 import React, { memo, useEffect, useRef } from 'react'
-import { shallowEqual, useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector, shallowEqual } from 'react-redux'
 
-import { getNewAlbumsAction } from '../../store/actionCreator'
-
-import ThemeHeaderRcm from 'components/theme-header-rcm'
-import AlbumCover from 'components/album-cover'
-import { NewAlbumWrapper } from './style'
 import { Carousel } from 'antd'
+import ThemeHeaderRcm from '@/components/theme-header-rcm'
+import AlbumCover from 'components/album-cover'
 
-export default memo(function NewAlbum () {
-  // redux hook
+
+import { getNewAlbumsAction } from './../../store/actionCreators'
+import { NewAlbumWrapper } from './style'
+
+export default memo(function XLNewAlbum () {
+  // state
+
+  const { newAlbums } = useSelector(state => ({
+    newAlbums: state.getIn(["recommend", "newAlbums"])
+  }), shallowEqual)
+  // redux hooks
   const dispatch = useDispatch()
-  const { newAlbums } = useSelector(
-    state => ({
-      newAlbums: state.getIn(['recommend', 'newAlbums']),
-    }),
-    shallowEqual
-  )
-
-  console.log("Render");
-  //  other hook
-  const albumRef = useRef()
-  // (新碟上架)
   useEffect(() => {
-    dispatch(getNewAlbumsAction())
+    dispatch(getNewAlbumsAction(10))
   }, [dispatch])
 
-  /* 轮播图布局思路:
-      两个页面轮播: 2page
-      在page中添加一个个item
-  */
+  // other hooks
+  const albumRef = useRef()
+
   return (
     <NewAlbumWrapper>
-      <ThemeHeaderRcm title="新碟上架" />
+      <ThemeHeaderRcm title="新碟上架" ></ThemeHeaderRcm>
       <div className="content">
         <div className="inner">
           <Carousel dots={false} ref={albumRef}>

@@ -2,7 +2,7 @@
  * @Author: web_XL
  * @Date: 2021-06-10 21:05:01
  * @LastEditors: web_XL
- * @LastEditTime: 2021-06-14 16:29:22
+ * @LastEditTime: 2021-06-20 14:16:07
  * @Description: 
  */
 
@@ -13,9 +13,21 @@
 //  使用react-redux的connect函数,将依赖的state和dispatch传递给connect
 //#endregion
 import React, { memo, useEffect } from 'react'
-import { connect, useDispatch, useSelector, shallowEqual } from 'react-redux'
+// import { connect, useDispatch, useSelector, shallowEqual } from 'react-redux'
 
-import { getTopBannersAction } from './store/actionCreators'
+// import { getTopBannersAction } from './store/actionCreators'
+
+import {
+  RecommendWrapper,
+  Content,
+  RecommendLeft,
+  RecommendRight,
+} from './style'
+import TopBanners from './components/top-banners'
+import HotRecommend from './components/hot-recommend'
+import NewAlbum from './components/new-album'
+import Ranking from './components/ranking'
+
 
 /**
  * 不使用 redux hooks 
@@ -25,21 +37,36 @@ function XLRecommend (props) {
   console.log("XLRecommend", props);
   // 组件和redux进行关联 主要两个目的 一个是获取state 一个是红区dispatch 操作数据
 
-  const dispatch = useDispatch()
-  const { topBanners } = useSelector(state => ({
-    topBanners: state.recommend.topBanners
-  }), shallowEqual)
+  // const dispatch = useDispatch()
+  // const { topBanners } = useSelector(state => ({
+  //   // topBanners: state.recommend.topBanners
+  //   // topBanners: state.recommend.get("topBanners")
+  //   // topBanners: state.get("recommend").get("topBanners")
+  //   topBanners: state.getIn(["recommend", "topBanners"])
+  // }), shallowEqual)
 
-  // 这里需要 [dispatch] 不然会报错
-  useEffect(() => {
-    dispatch(getTopBannersAction())
-  }, [dispatch])
+  // // 这里需要 [dispatch] 不然会报错
+  // useEffect(() => {
+  //   // dispatch(getTopBannersAction())
+  // }, [dispatch])
 
 
   return (
-    <div>
-      XLRecommend:{topBanners.length}
-    </div>
+    <RecommendWrapper>
+      {/* 轮播图 */}
+      <TopBanners />
+      <Content className="w980">
+        <RecommendLeft>
+          {/* 热门推荐 */}
+          <HotRecommend></HotRecommend>
+          {/* 新碟上架 */}
+          <NewAlbum />
+          {/* 榜单 */}
+          <Ranking />
+        </RecommendLeft>
+        <RecommendRight></RecommendRight>
+      </Content>
+    </RecommendWrapper>
   )
 }
 

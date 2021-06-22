@@ -1,3 +1,10 @@
+/*
+ * @Author: web_XL
+ * @Date: 2021-05-30 09:26:52
+ * @LastEditors: web_XL
+ * @LastEditTime: 2021-06-16 17:29:12
+ * @Description: 
+ */
 // 1. 第三方开库
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react'
 
@@ -9,7 +16,8 @@ import { getTopBannersAction } from '../../store/actionCreator'
 import { Carousel } from 'antd'
 import { BannerControl, BannerLeft, BannerRight, BannerWrapper } from './style'
 
-export default memo(function TopBanners() {
+export default memo(function TopBanners () {
+  console.log("render");
   // 组件内state
   const [currentIndex, setCurrentIndex] = useState(0)
 

@@ -1,7 +1,5 @@
-/* 导入某个模块里面的css 可以用~ */
 @import '~normalize.css';
 @import '~antd/dist/antd.css';
-
 
 /* 样式的重置 */
 body,
@@ -69,7 +67,6 @@ img {
   border: none;
   vertical-align: middle;
 }
-
 
 /* 全局样式 */
 body,

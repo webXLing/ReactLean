@@ -2,7 +2,7 @@
  * @Author: web_XL
  * @Date: 2021-06-08 16:38:35
  * @LastEditors: web_XL
- * @LastEditTime: 2021-06-09 09:46:41
+ * @LastEditTime: 2021-06-18 16:50:19
  * @Description: 
  */
 /*
@@ -16,6 +16,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from '@/App'
 import '@/assets/css/reset.css'
+// import '@/assets/css/component.css'
 
 ReactDOM.render(
   <App />,
