@@ -2,7 +2,7 @@
  * @Author: web_XL
  * @Date: 2021-06-23 10:17:34
  * @LastEditors: web_XL
- * @LastEditTime: 2021-06-24 16:50:24
+ * @LastEditTime: 2021-06-25 10:18:22
  * @Description:
  */
 import {
@@ -10,7 +10,8 @@ import {
   CHANGE_CURRENT_SONG_INDEX,
   CHANGE_PLAY_LIST,
   CHANGE_PLAY_SEQUENCE,
-  LYRICLIST
+  LYRICLIST,
+  CURRENTLYRICINDEX
 } from './constants'
 import { getSongDetail, getLyric } from '@/service/api/songs'
 import { getRandomNumber } from '@/utils/math-utils'
@@ -44,6 +45,12 @@ export const changePlaySequenceAction = (sequence) => ({
 export const changeLyricListAction = (lyricList) => ({
   type: LYRICLIST,
   lyricList,
+})
+
+// 设置当前歌词 下标
+export const changeCurrentLyricIndexAction = (currentLyricIndex) => ({
+  type: CURRENTLYRICINDEX,
+  currentLyricIndex
 })
 
 export const getSongsDetailAction = (id) => {

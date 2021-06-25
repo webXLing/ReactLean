@@ -2,10 +2,10 @@
  * @Author: web_XL
  * @Date: 2021-06-08 16:49:33
  * @LastEditors: web_XL
- * @LastEditTime: 2021-06-23 09:12:32
+ * @LastEditTime: 2021-06-25 10:53:24
  * @Description: 
  */
-import React, { memo } from 'react'
+import React, { memo, Suspense } from 'react'
 import { renderRoutes } from 'react-router-config'
 import { HashRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
@@ -24,7 +24,9 @@ export default memo(function App () {
     <Provider store={store}>
       <HashRouter>
         <AppHeader></AppHeader>
-        {renderRoutes(myRoutes)}
+        <Suspense fallback={<div>loading</div>}>
+          {renderRoutes(myRoutes)}
+        </Suspense>
         <AppPlayerBar></AppPlayerBar>
         <AppFooter></AppFooter>
       </HashRouter>

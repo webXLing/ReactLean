@@ -2,26 +2,35 @@
  * @Author: web_XL
  * @Date: 2021-06-09 10:18:26
  * @LastEditors: web_XL
- * @LastEditTime: 2021-06-24 09:29:40
+ * @LastEditTime: 2021-06-25 10:52:15
  * @Description:
  */
 // "react-router-config": "^5.1.1"
 // "react-router-dom": "^5.2.0"
-import React from 'react'
+import React, { lazy } from 'react'
 import { Redirect } from 'react-router-dom'
-import Discover from '../pages/discover'
-import Mine from '../pages/mine'
-import XLFriends from '../pages/friends'
-import XLRecommend from '../pages/discover/child-pages/recommend'
-import XLToplist from '../pages/discover/child-pages/toplist'
-import XLAlbum from '../pages/discover/child-pages/album'
-import XLArtist from '../pages/discover/child-pages/artist'
-import XLDjradio from '../pages/discover/child-pages/djradio'
-import XLSongs from '../pages/discover/child-pages/songs'
-import XLPlayerInfo from '../pages/player'
+// import Discover from '../pages/discover'
+// import Mine from '../pages/mine'
+// import XLFriends from '../pages/friends'
+// import XLRecommend from '../pages/discover/child-pages/recommend'
+// import XLToplist from '../pages/discover/child-pages/toplist'
+// import XLAlbum from '../pages/discover/child-pages/album'
+// import XLArtist from '../pages/discover/child-pages/artist'
+// import XLDjradio from '../pages/discover/child-pages/djradio'
+// import XLSongs from '../pages/discover/child-pages/songs'
+// import XLPlayerInfo from '../pages/player'
 
-
-
+// 路由懒加载 要配合 suspended
+const Discover = lazy(() => import('../pages/discover'))
+const Mine = lazy(() => import('../pages/mine'))
+const XLFriends = lazy(() => import('../pages/friends'))
+const XLRecommend = lazy(() => import('../pages/discover/child-pages/recommend'))
+const XLToplist = lazy(() => import('../pages/discover/child-pages/toplist'))
+const XLAlbum = lazy(() => import('../pages/discover/child-pages/album'))
+const XLArtist = lazy(() => import('../pages/discover/child-pages/artist'))
+const XLDjradio = lazy(() => import('../pages/discover/child-pages/djradio'))
+const XLSongs = lazy(() => import('../pages/discover/child-pages/songs'))
+const XLPlayerInfo = lazy(() => import('../pages/player'))
 
 
 

@@ -2,7 +2,7 @@
  * @Author: web_XL
  * @Date: 2021-06-23 09:03:16
  * @LastEditors: web_XL
- * @LastEditTime: 2021-06-24 15:17:56
+ * @LastEditTime: 2021-06-25 10:22:28
  * @Description:
  */
 import React, { memo, useEffect, useState, useRef, useCallback } from 'react'
@@ -24,7 +24,8 @@ import { DownloadOutlined, UndoOutlined } from '@ant-design/icons';
 import {
   getSongsDetailAction,
   changePlaySequenceAction,
-  changeCurrentIndexAndSongAction
+  changeCurrentIndexAndSongAction,
+  changeCurrentLyricIndexAction
 } from './../store/actionCreators'
 
 
@@ -41,10 +42,16 @@ export default memo(function XLPlayerBar () {
 
   // redux hooks
   const dispatch = useDispatch()
-  const { currentSong, playSequence } = useSelector(state => ({
-    currentSong: state.getIn(["player", "currentSong"]),
-    playSequence: state.getIn(["player", "playSequence"]),
-  }), shallowEqual)
+  const {
+    currentSong,
+    playSequence,
+    lyricList,
+    currentLyricIndex } = useSelector(state => ({
+      currentSong: state.getIn(["player", "currentSong"]),
+      playSequence: state.getIn(["player", "playSequence"]),
+      lyricList: state.getIn(["player", "lyricList"]),
+      currentLyricIndex: state.getIn(["player", "currentLyricIndex"]),
+    }), shallowEqual)
 
   const picUrl = currentSong.al && currentSong.al.picUrl; // 图片url
   const songName = currentSong.name; // 歌曲名字
@@ -111,6 +118,31 @@ export default memo(function XLPlayerBar () {
       setCurrentTime(time * 1000)
       setProgress(time * 1000 / duration * 100)
     }
+
+
+    // 当前播放的歌词
+    let index = 0;
+    for (; index < lyricList.length; index++) {
+      const element = lyricList[index];
+      if (time * 1000 < element.totalTime) break
+    }
+
+    index = index - 1 < 0 ? 0 : index - 1
+    // 对dispatch进行优化,如果index没有改变,就不进行dispatch
+    if (currentLyricIndex !== index) {
+      dispatch(changeCurrentLyricIndexAction(index))
+    }
+
+    // 展示歌词
+    const lyricContent = lyricList[index] && lyricList[index].content;
+    lyricContent &&
+      message.open({
+        key: 'lyric',
+        content: lyricContent,
+        duration: 0,
+        className: 'lyric-css',
+      });
+
   }
 
   // 当前歌曲播放结束后
