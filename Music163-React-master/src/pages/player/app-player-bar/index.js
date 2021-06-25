@@ -16,7 +16,7 @@ import { DownloadOutlined, UndoOutlined } from '@ant-design/icons';
 import SliderPlaylist from './c-cpns/slider-playlist';
 import { Control, Operator, PlayerbarWrapper, PlayerInfo } from './stye';
 
-export default memo(function JMAppPlayerBar() {
+export default memo(function JMAppPlayerBar () {
   // props/state
   const [currentTime, setCurrentTime] = useState(0); // 用于保存当前播放的时间
   const [isShowBar, setIsShowBar] = useState(false); // 是否显示音量播放条
@@ -80,7 +80,7 @@ export default memo(function JMAppPlayerBar() {
   }, [isPlaying]);
 
   // 歌曲播放触发
-  function timeUpdate(e) {
+  function timeUpdate (e) {
     // 没有在滑动滑块时触发(默认时没有滑动)
     let currentTime = e.target.currentTime;
     if (!isChanging) {
@@ -157,7 +157,7 @@ export default memo(function JMAppPlayerBar() {
   }, [isShowSlide]);
 
   // 更改音量
-  function changingVolume(value) {
+  function changingVolume (value) {
     audioRef.current.volume = value / 100;
   }
 
@@ -191,7 +191,7 @@ export default memo(function JMAppPlayerBar() {
   };
 
   // 当前歌曲播放结束后
-  function handleTimeEnd() {
+  function handleTimeEnd () {
     // 单曲循环
     if (playSequence === 2) {
       audioRef.current.currentTime = 0;

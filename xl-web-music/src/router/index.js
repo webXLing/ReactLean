@@ -2,7 +2,7 @@
  * @Author: web_XL
  * @Date: 2021-06-09 10:18:26
  * @LastEditors: web_XL
- * @LastEditTime: 2021-06-10 21:31:15
+ * @LastEditTime: 2021-06-24 09:29:40
  * @Description:
  */
 // "react-router-config": "^5.1.1"
@@ -18,6 +18,8 @@ import XLAlbum from '../pages/discover/child-pages/album'
 import XLArtist from '../pages/discover/child-pages/artist'
 import XLDjradio from '../pages/discover/child-pages/djradio'
 import XLSongs from '../pages/discover/child-pages/songs'
+import XLPlayerInfo from '../pages/player'
+
 
 
 
@@ -61,7 +63,14 @@ const routes = [
       { path: '/discover/album', component: XLAlbum },
       { path: '/discover/djradio', component: XLDjradio },
       { path: '/discover/artist', component: XLArtist },
-      { path: '/discover/songs', component: XLSongs },
+      {
+        path: '/discover/songs',
+        component: XLSongs
+      },
+      {
+        path: '/discover/song',
+        component: XLPlayerInfo
+      }
       // { path: '/discover/song', component: JMSongDetail },
     ]
   },

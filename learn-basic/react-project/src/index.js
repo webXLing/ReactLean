@@ -2,7 +2,7 @@
  * @Author: web_XL
  * @Date: 2021-03-31 21:38:09
  * @LastEditors: web_XL
- * @LastEditTime: 2021-06-08 14:37:12
+ * @LastEditTime: 2021-06-22 15:21:37
  * @Description: 
  */
 import React, { createContext } from 'react';
@@ -54,7 +54,7 @@ import './style.css'
 // import App from './15_axios/App';
 // import App from './16_react-transition-group/App';
 // import App from './16_react-transition-group/App';
-// import App from './017_easy_redux/App';
+import App from './017_easy_redux/App';
 // import App from './018_react-router/App';
 // import App from './018_react-router/App-router-config-统一配置';
 // import App from './019_hooks体验/01_counter-class'
@@ -75,7 +75,7 @@ import './style.css'
 // import App from './019_hooks体验/16_useLayoutEffect'
 // import App from './019_hooks体验/17_自定义hook'
 // import App from './019_hooks体验/18_自定义hook-共享context'
-import App from './019_hooks体验/19_自定义hook-获取页面滚动'
+// import App from './019_hooks体验/19_自定义hook-获取页面滚动'
 
 
 

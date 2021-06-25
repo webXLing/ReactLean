@@ -136,11 +136,11 @@ export const PlayerInfo = styled.div`
       }
 
       .ant-slider-rail {
-        background: url(${require('@/assets/img/progress_bar.png')}) 0 0;
+        background: url(${require('@/assets/img/progress_bar.png').default}) 0 0;
       }
 
       .ant-slider-track {
-        background: url(${require('@/assets/img/progress_bar.png')});
+        background: url(${require('@/assets/img/progress_bar.png').default});
         background-position: left -66px;
       }
 
@@ -148,7 +148,7 @@ export const PlayerInfo = styled.div`
         width: 20px;
         height: 22px;
         border: 0;
-        background: url(${require('@/assets/img/sprite_icon.png')});
+        background: url(${require('@/assets/img/sprite_icon.png').default});
         background-position: 0 -250px;
       }
     }
@@ -259,14 +259,14 @@ export const Operator = styled.div`
       }
 
       .ant-slider-track {
-        background: url(${require('@/assets/img/playbar_sprite.png')}) no-repeat
+        background: url(${require('@/assets/img/playbar_sprite.png').default}) no-repeat
           0 9999px;
         background-position: -40px bottom;
       }
 
       .ant-slider-handle {
         border: 0;
-        background: url(${require('@/assets/img/sprite_icon.png')});
+        background: url(${require('@/assets/img/sprite_icon.png').default});
         background-position: -42px -250px;
       }
     }

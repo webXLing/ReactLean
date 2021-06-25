@@ -2,7 +2,7 @@
  * @Author: web_XL
  * @Date: 2021-06-16 16:26:53
  * @LastEditors: web_XL
- * @LastEditTime: 2021-06-16 17:21:30
+ * @LastEditTime: 2021-06-24 09:14:02
  * @Description:
  */
 
@@ -39,19 +39,18 @@ export default memo(function XLTopBanner () {
 
   // 其他的hooks
   const bannerRef = useRef()
-  console.log("render1");
+  // console.log("render1");
   const bannerChange = useCallback((form, to) => {
-    console.log(form, to);
     setcurrentIndex(to)
   }, [])
 
   useEffect(() => {
-    console.log("moundid and update");
+    // console.log("moundid and update");
   })
 
   // 其他的逻辑
   const bgImage = topBanners[currentIndex] && (topBanners[currentIndex].imageUrl + "?imageView&blur=40x20")
-  console.log("render2");
+  // console.log("render2");
   return (
     <BannerWrapper bgImage={bgImage}>
       <div className="banner w980">

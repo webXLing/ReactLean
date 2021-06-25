@@ -2,7 +2,7 @@
  * @Author: web_XL
  * @Date: 2021-06-08 16:49:33
  * @LastEditors: web_XL
- * @LastEditTime: 2021-06-14 15:14:14
+ * @LastEditTime: 2021-06-23 09:12:32
  * @Description: 
  */
 import React, { memo } from 'react'
@@ -15,6 +15,7 @@ import myRoutes from '@/router'
 import store from '@/store/index'
 
 import AppFooter from '@/components/app-footer'
+import AppPlayerBar from './pages/player/app-player-bar'
 import AppHeader from '@/components/app-header'
 
 
@@ -24,6 +25,7 @@ export default memo(function App () {
       <HashRouter>
         <AppHeader></AppHeader>
         {renderRoutes(myRoutes)}
+        <AppPlayerBar></AppPlayerBar>
         <AppFooter></AppFooter>
       </HashRouter>
     </Provider>
