@@ -2,7 +2,7 @@
  * @Author: web_XL
  * @Date: 2021-06-09 09:35:57
  * @LastEditors: web_XL
- * @LastEditTime: 2021-06-09 09:44:43
+ * @LastEditTime: 2021-06-25 11:00:09
  * @Description:
  */
 const path = require("path")
@@ -14,6 +14,9 @@ module.exports = {
     alias: {
       "@": resolve("src"),
       "components": resolve("src/components")
-    }
+    },
+    // output: {
+    //   publicPath: "./"
+    // }
   }
 }

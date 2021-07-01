@@ -1,3 +1,10 @@
+/*
+ * @Author: web_XL
+ * @Date: 2021-06-20 14:59:51
+ * @LastEditors: web_XL
+ * @LastEditTime: 2021-07-01 10:42:25
+ * @Description: 
+ */
 import React, { memo } from 'react';
 
 import {
@@ -9,7 +16,7 @@ import {
   ThemeCoverWrapper
 } from "./style";
 
-export default memo(function HYThemeCover(props) {
+export default memo(function HYThemeCover (props) {
   const { info, right } = props;
 
   return (
@@ -30,7 +37,7 @@ export default memo(function HYThemeCover(props) {
         {info.name}
       </div>
       <div className="cover-source">
-        by {info.copywriter || info.creator.nickname}
+        by {info.copywriter || (info.creator && info.creator.nickname)}
       </div>
     </ThemeCoverWrapper>
   )
