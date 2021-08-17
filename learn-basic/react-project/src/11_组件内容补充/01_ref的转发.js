@@ -2,7 +2,7 @@
  * @Author: web_XL
  * @Date: 2021-05-05 16:05:48
  * @LastEditors: web_XL
- * @LastEditTime: 2021-05-05 16:13:11
+ * @LastEditTime: 2021-08-03 18:29:02
  * @Description: 
  */
 
@@ -35,8 +35,6 @@ export default class App extends PureComponent {
     this.hRef = createRef()
     this.homeRef = createRef()
     this.pRef = createRef()
-
-
   }
   render () {
     return (

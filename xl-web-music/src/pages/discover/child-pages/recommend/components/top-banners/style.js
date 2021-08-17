@@ -2,12 +2,13 @@
  * @Author: web_XL
  * @Date: 2021-06-16 16:27:15
  * @LastEditors: web_XL
- * @LastEditTime: 2021-06-16 17:11:05
+ * @LastEditTime: 2021-08-17 15:54:51
  * @Description: 
  */
 // const { default: styled } = require('styled-components')
 import styled from 'styled-components'
 {/* <BannerWrapper bgImage={bgImage}> 上的属性可以作为参数传递过来 */ }
+
 export const BannerWrapper = styled.div`
   background: url('${props => props.bgImage}') center center/6000px;
   width: 100%;
@@ -30,9 +31,9 @@ export const BannerLeft = styled.div`
 `
 
 export const BannerRight = styled.a.attrs({
-  // href: 'https://music.163.com/#/download',
-  href: 'https://d1.music.126.net/dmusic/cloudmusicsetup2.8.0.198822.exe',
-  target: '_blank',
+    // href: 'https://music.163.com/#/download',
+    href: 'https://d1.music.126.net/dmusic/cloudmusicsetup2.8.0.198822.exe',
+    target: '_blank',
 })`
   width: 250px;
   background: url(${require('@/assets/img/download.png').default});
