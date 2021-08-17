@@ -1,0 +1,13 @@
+{
+  "presets": [
+    "@babel/preset-env",
+    [
+      "@babel/preset-react",
+      {
+        "pragma": "TinyReact.createElement"
+      }
+    ]
+  ]
+}
+// 告诉babel使用TinyReact 下的createElement 解析jsx
+// "pragma": "TinyReact.createElement"
